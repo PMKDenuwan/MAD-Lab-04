@@ -29,7 +29,7 @@ class NoteDataBaseHelper(context: Context) : SQLiteOpenHelper(context,DATABASE_N
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        val dropTableQuery="DROP TABLE IF EXIST $Table_Name"
+        val dropTableQuery="DROP TABLE IF EXISTS $Table_Name"
         db?.execSQL(dropTableQuery)
         onCreate(db)
     }
